@@ -1,0 +1,68 @@
+
+.login-container {
+    height: 100vh;
+}
+
+/* Login box */
+.container.shadow {
+    max-width: 900px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+/* Left side (form container) */
+.login-input-container {
+    background-color: #dcdcdc;
+}
+
+.login-input-container button {
+    background-color: #2c444e !important;
+    border: #2c444e !important;
+}
+/* Center the image inside its container */
+.image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; 
+}
+
+/* Ensure image scales properly */
+.image-container img {
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+    .login-input-container {
+        padding: 20px;
+    }
+
+    .login-container p {
+        font-size: 14px;
+    }
+
+    .form-control {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .btn {
+        font-size: 16px;
+        padding: 10px;
+    }
+}
+
+/* Right side (image) */
+.image-container img {
+    max-height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .image-container img {
+        display: none;
+    }
+}
