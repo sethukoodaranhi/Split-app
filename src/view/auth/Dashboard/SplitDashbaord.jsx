@@ -12,36 +12,45 @@ function SplitDashbaord() {
   const splitOpenhandler = () => {
     setshowSplitOffcanvas(true)
   }
-  const closeOffcanvas=()=>{
+  const closeOffcanvas = () => {
     setshowSplitOffcanvas(false)
   }
+  const splitDetails = JSON.parse(localStorage.getItem('splits')) || [];
+  console.log("splitDetails", splitDetails)
   return (
-    <div className=''>
-      <div className='d-flex justify-content-between m-2'>
-        <h1>Split</h1>
-        <Button onClick={splitOpenhandler} size=''>New Split</Button>
+    <div className="container my-4">
+      <div className="d-flex justify-content-between align-items-center mb-4">
+        <h2 className="mb-0">Split Manager</h2>
+        <Button variant="success" onClick={splitOpenhandler}>
+          + New Split
+        </Button>
       </div>
-      <div className='container'>
-        <h4>Pending Split</h4>
+
+      <div>
+        <h5 className="mb-3">Pending Splits</h5>
         <Tabs
-          id="controlled-tab-example"
+          id="split-tabs"
           activeKey={tabkey}
           onSelect={(k) => settabkey(k)}
-          className="mb-3"
+          className="mb-4"
+          justify
         >
-          <Tab eventKey="byUser" title="Paid By User">
+          <Tab eventKey="byUser" title="Paid By You">
             <PendingSplitPaidByUser />
           </Tab>
-          <Tab eventKey="toUser" title="Paid to User">
-            <PendingSplitPaidTotheUser />
+          <Tab eventKey="toUser" title="Paid To You">
+            <PendingSplitPaidTotheUser splitDetails={splitDetails} />
           </Tab>
-
         </Tabs>
       </div>
+
+    
       <CreateNewSplit
         show={showSplitOffcanvas}
-        close={closeOffcanvas} />
+        close={closeOffcanvas}
+      />
     </div>
+
 
   )
 }

@@ -87,6 +87,8 @@ function CreateNewSplit({ show, close }) {
         const existing = JSON.parse(localStorage.getItem("splits") || "[]");
         existing.push(finalData);
         localStorage.setItem("splits", JSON.stringify(existing));
+        alert("Split added successfully")
+        close()
       };
       
 
