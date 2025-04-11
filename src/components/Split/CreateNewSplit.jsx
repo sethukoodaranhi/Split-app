@@ -95,7 +95,7 @@ function CreateNewSplit({ show, close }) {
 
 
     return (
-        <Offcanvas show={show} onHide={close} placement="end">
+        <Offcanvas show={show} onHide={close} placement="end" >
             <Offcanvas.Header closeButton>
                 <Offcanvas.Title>New Split</Offcanvas.Title>
             </Offcanvas.Header>
